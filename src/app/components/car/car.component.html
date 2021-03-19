@@ -1,0 +1,17 @@
+<div id="cgroup">
+    <div *ngFor="let car of cars" class="card m-4" routerLink="/cars/details/{{car.carId}}">
+        <div class="row g-0" style="align-items: center;">
+        <div class="col-md-6">
+            <img src="{{basePath}}{{car.imagePath}}">
+        </div>
+        <div id="cbody" class="col-md-6">
+            <div class="card-body">
+            <h5 class="card-title">{{car.brandName}} {{car.description}}</h5> <hr>
+            <li>Color : {{car.colorName}}</li>
+            <li>Daily Price : {{car.dailyPrice}} TL</li>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+

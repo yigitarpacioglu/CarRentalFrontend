@@ -1,0 +1,17 @@
+<nav id="brandSideBarMenu" class=" bg-dark sidebar text-center text-light">
+  <div class="position-sticky pt-0">
+    <h1 routerLink="/cars"
+        (click)="clearCurrentBrand()"> BRANDS </h1>
+    <hr>
+    <ul class="nav flex-column">
+      <li *ngFor="let brand of brands" 
+          (click)=setCurrentBrand(brand);  
+          class="nav-item"
+          routerLink = "/cars/brand/{{brand.brandName}}">
+        <span [class]="getCurrentBrandClass(brand)" aria-current="page" href="#" >
+          {{brand.brandName}}
+        </span>
+      </li>        
+    </ul>
+  </div>
+</nav>

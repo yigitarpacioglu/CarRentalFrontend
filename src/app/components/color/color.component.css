@@ -1,0 +1,24 @@
+#colorSideBarMenu{
+    font-family:'Verdana';
+    cursor: pointer;
+
+}
+
+span{    
+    border:1px solid black;     
+    color: black;
+    background-color:#E2E3E5;
+}
+
+h1{
+    font-size: 20pt;
+    border:1px solid black;
+    border-radius: 3%;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+hr{
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
+}

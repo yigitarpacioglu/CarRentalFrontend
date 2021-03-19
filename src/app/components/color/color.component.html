@@ -1,0 +1,17 @@
+<nav id="colorSideBarMenu" class=" bg-dark sidebar text-center text-light">
+    <div class="position-sticky pt-0">
+      <h1 routerLink="/cars" 
+          (click)="clearCurrentColor()"> COLORS </h1>
+      <hr>
+      <ul class="nav flex-column">
+        <li *ngFor="let color of colors" 
+        (click)=setCurrentColor(color);  
+        class="nav-item"
+        routerLink = "/cars/color/{{color.colorName}}" >
+          <span a [class]="getCurrentColorClass(color)" aria-current="page" href="#" >
+            {{color.colorName}}
+          </span>
+        </li>        
+      </ul>
+    </div>
+  </nav>
