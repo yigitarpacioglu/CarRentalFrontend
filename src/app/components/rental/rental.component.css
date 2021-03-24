@@ -1,3 +1,8 @@
 #custModal{
     display: flex;
 }
+#rent:hover{
+    background-color: red;
+    border: 5px solid white;
+    font-weight: bolder;
+}

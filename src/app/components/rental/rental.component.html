@@ -8,18 +8,18 @@
 >
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="exampleModalLabel">Account and Dates</h5>
         <button
           type="button"
-          class="close"
+          class="close btn-danger"
           data-bs-dismiss="modal"
           aria-label="Close"
         >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body bg-light">
         <div class="row mb-3">
           <div class="col-md-12">
             <select [(ngModel)]="chosenCustomer" class="form-control px-2">
@@ -37,7 +37,7 @@
           <div class="col">
             <label for="rent">Rent Date</label>
             <input
-              id="rent"
+              id="rentDate"
               type="date"
               class="form-control"
               [(ngModel)]="rentDate"
@@ -47,7 +47,7 @@
           <div class="col">
             <label for="return">Return Date</label>
             <input
-              id="return"
+              id="returnDate"
               type="date"
               class="form-control"
               [(ngModel)]="returnDate"
@@ -55,8 +55,8 @@
             />
           </div>
         </div>
-        <h1 style="font-size: 2em">Car Details</h1>
-        <div class="row">
+        <h1  style="font-size: 2em">Car Details</h1>
+        <div class="row ">
           <div class="col-6">
             <label for="brand" class="col-form-label"> Brand: </label>
             <div>
@@ -112,15 +112,16 @@
         </div>
       </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      <div class="modal-footer bg-dark">
+        <button type="button" class="btn btn-secondary text-light" data-bs-dismiss="modal">
           Return
         </button>
         <button
           (click)="goToPayment()"
           type="button"
-          class="btn btn-primary"
+          class="btn btn-warning px-4"
           data-bs-dismiss="modal"
+          id="rent"
         >
           Rent
         </button>

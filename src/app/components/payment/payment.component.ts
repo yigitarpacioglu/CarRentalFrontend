@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/entities/car';
 import { Customer } from 'src/app/models/entities/customerOps/customer';
 import { Payment } from 'src/app/models/entities/rentOrder/payment';
@@ -22,12 +23,14 @@ export class PaymentComponent implements OnInit {
   dateReturn:Date;
   customerToUpdate:Customer;
   cashAmount:number=0;  
+  
 
   constructor(private activatedRoute:ActivatedRoute,
     private carService:CarService,
     private router:Router,
     private rentService:RentService,
-    private customerService:CustomerService
+    private customerService:CustomerService,
+    private toastrService:ToastrService,
     ) { }
 
   ngOnInit(): void {
@@ -69,7 +72,7 @@ export class PaymentComponent implements OnInit {
     this.payment.customerId=this.rental.customerId;    
     if(this.payment.amount <= 0){
       this.router.navigate(['/cars']);
-      // error
+      this.toastrService.error("Please fill with correct values")
     }
     }
   }  
@@ -77,8 +80,11 @@ export class PaymentComponent implements OnInit {
     //console.log(this.rental)  
     //console.log(this.payment)  
     this.rentService.pay(this.rental,this.payment).subscribe(response => {
-    this.router.navigate(['/cars']);    
-    })   
+      if(response.success){
+        this.router.navigate(['/cars']); 
+        this.toastrService.success(response.message);
+      }    
+    })     
   }
   
 

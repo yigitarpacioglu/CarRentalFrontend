@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/entities/car';
 import { CarImage } from 'src/app/models/entities/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
@@ -15,7 +16,7 @@ export class CarDetailComponent implements OnInit {
   basePath="https://localhost:44327";
   images:CarImage[];
   car:Car;
-  constructor(private carImageService:CarImageService, private activatedRoute:ActivatedRoute,private carService:CarService) { }
+  constructor(private carImageService:CarImageService, private activatedRoute:ActivatedRoute,private carService:CarService, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -45,6 +46,9 @@ export class CarDetailComponent implements OnInit {
   }
   getBack() {
     this.carService.getCars();
+  }
+  rentOnClick(){
+    this.toastrService.info("Please select proper customer, pickup and drop off dates.")
   }
 
 }
