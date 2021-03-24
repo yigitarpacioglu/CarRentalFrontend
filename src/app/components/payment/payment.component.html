@@ -1,0 +1,241 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-dark text-light">
+          <h3 class="card-title m-3">Rental Summary</h3>
+        </div>
+        <div class="card-body fs-5 bg-light">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th>Pickup Date</th>
+                <th>Dropoff Date</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Price(Daily)</th>
+                <th>Price(Total)</th>
+                <th>Your Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ dateRent | date: "longDate" }}</td>
+                <td>{{ dateReturn | date: "longDate" }}</td>
+                <td>{{ carDetails.brandName }}</td>
+                <td>{{ carDetails.description }}</td>
+                <td>{{ carDetails.colorName }}</td>
+                <td>{{ carDetails.dailyPrice | currency: "₺" }}</td>
+                <td>{{ payment.amount | currency: "₺" }}</td>
+                <td>{{ customerToUpdate.balance | currency: "₺" }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-footer text-muted bg-dark">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed fs-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#paymentOptionsBody"
+                  aria-expanded="false"
+                  aria-controls="paymentOptionsBody"
+                  id="paymentOptions"
+                >
+                  Payment Options
+                </button>
+              </h3>
+              <div
+                id="paymentOptionsBody"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <div class="card mt-4">
+                    <div class="card-header text-center">
+                      <strong>Payment Card Information</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="inputbox mt-3">
+                          <span>Card's holder</span>
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required="required"
+                          />
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="inputbox mt-3 mr-2">
+                              <span>Card Number</span>
+                              <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                required="required"
+                              />
+                              <i class="fa fa-credit-card"></i>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                              <div class="inputbox mt-3 mx-4">
+                                <span>Expire date</span>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  class="form-control"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="inputbox mt-3">
+                                <span>Security Code / CVC</span>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  class="form-control"
+                                  required="required"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="row">
+                        <button
+                          (click)="pay()"
+                          id="payButton"
+                          class="btn btn-dark text-light"
+                        >
+                          <strong>{{ payment.amount | currency: "₺" }} </strong
+                          >Rent
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-footer text-muted bg-dark">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed fs-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#balanceUpdateBody"
+                  aria-expanded="false"
+                  aria-controls="balanceUpdateBody"
+                  id="balanceUpdate"
+                >
+                  Update Your Balance
+                </button>
+              </h3>
+              <div
+                id="balanceUpdateBody"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <div class="card mt-4">
+                    <div class="card-header text-center">
+                      <strong>Payment Card Information</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="inputbox mt-3">
+                          <span>Card's holder</span>
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required="required"
+                          />
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="inputbox mt-3 mr-2">
+                              <span>Card Number</span>
+                              <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                required="required"
+                              />
+                              <i class="fa fa-credit-card"></i>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="d-flex flex-row">
+                              <div class="inputbox mt-3 mx-4">
+                                <span>Expire date</span>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  class="form-control"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="inputbox mt-3">
+                                <span>Security Code / CVC</span>
+                                <input
+                                  type="text"
+                                  name="name"
+                                  class="form-control"
+                                  required="required"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="inputbox mt-3">
+                          <span>Cash amount you would like to load</span>
+                          <input
+                            type="text"                          
+                            class="form-control"
+                            required="required"
+                            [(ngModel)]="cashAmount"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="row">
+                        <button
+                          
+                          (click)="balanceUpdate()"
+                          id="balanceUpdateButton"
+                          class="btn btn-dark text-light"
+                          
+                        >
+                          <strong>{{ cashAmount | currency: "₺" }} </strong
+                          >Deposit
+                        </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

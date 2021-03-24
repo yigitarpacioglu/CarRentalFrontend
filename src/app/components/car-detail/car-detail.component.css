@@ -8,3 +8,22 @@ h3{
     padding: 10px;
     text-align: center;
 }
+#imageCarousel{    
+    padding: 25px;
+    border: 10px solid #343a40;
+    border-radius: 10%;   
+    background-color:#E2E3E5;
+}
+
+img{
+    border-radius: 10%;
+}
+
+#rentButton{
+    border-radius: 7%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#rentButton:hover{
+    background-color:#ffc107 ;    
+}

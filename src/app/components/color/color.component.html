@@ -1,17 +1,20 @@
 <nav id="colorSideBarMenu" class=" bg-dark sidebar text-center text-light">
-    <div class="position-sticky pt-0">
-      <h1 routerLink="/cars" 
-          (click)="clearCurrentColor()"> COLORS </h1>
-      <hr>
-      <ul class="nav flex-column">
-        <li *ngFor="let color of colors" 
-        (click)=setCurrentColor(color);  
-        class="nav-item"
-        routerLink = "/cars/color/{{color.colorName}}" >
-          <span a [class]="getCurrentColorClass(color)" aria-current="page" href="#" >
-            {{color.colorName}}
-          </span>
-        </li>        
-      </ul>
-    </div>
-  </nav>
+  <div class="position-sticky pt-0">
+    <h1 routerLink="/cars"
+        (click)="clearCurrentColor()"> BRANDS </h1> 
+        <div class="mb-3 px-2">          
+          <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search colors">
+        </div>
+    <hr>
+    <ul class="nav flex-column">
+      <li *ngFor="let color of colors | colorFilter:filterText" 
+          (click)=setCurrentColor(color);  
+          class="nav-item"
+          routerLink = "/cars/color/{{color.colorId}}">
+        <span [class]="getCurrentColorClass(color)" aria-current="page" href="#" >
+          {{color.colorName}}
+        </span>
+      </li>        
+    </ul>
+  </div>
+</nav>

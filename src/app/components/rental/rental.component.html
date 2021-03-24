@@ -1,0 +1,130 @@
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <select [(ngModel)]="chosenCustomer" class="form-control px-2">
+              <option [ngValue]="undefined" disabled selected>
+                -- select customer --
+              </option>
+              <option *ngFor="let customer of customers" [ngValue]="customer">
+                {{customer.id}} - {{ customer.firstName }} {{ customer.lastName }} -
+                {{ customer.companyName }} 
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col">
+            <label for="rent">Rent Date</label>
+            <input
+              id="rent"
+              type="date"
+              class="form-control"
+              [(ngModel)]="rentDate"
+              [min]="initialDate(1)"
+            />
+          </div>
+          <div class="col">
+            <label for="return">Return Date</label>
+            <input
+              id="return"
+              type="date"
+              class="form-control"
+              [(ngModel)]="returnDate"
+              [min]="initialDate(2)"
+            />
+          </div>
+        </div>
+        <h1 style="font-size: 2em">Car Details</h1>
+        <div class="row">
+          <div class="col-6">
+            <label for="brand" class="col-form-label"> Brand: </label>
+            <div>
+              <input
+                id="brand"
+                type="text"
+                readonly
+                class="form-control"
+                [value]="chosenCar.brandName"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="model" class="col-form-label"> Model: </label>
+            <div>
+              <input
+                id="model"
+                type="text"
+                readonly
+                class="form-control"
+                [value]="chosenCar.description"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-6">
+            <label for="dailyPrice" class="col-form-label">
+              Daily Price:
+            </label>
+            <div>
+              <input
+                id="daiyPrice"
+                type="text"
+                readonly
+                class="form-control"
+                [value]="chosenCar.dailyPrice | currency: '₺'"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="color" class="col-form-label"> Color:</label>
+            <div>
+              <input
+                id="color"
+                type="text"
+                readonly
+                class="form-control"
+                [value]="chosenCar.colorName"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Return
+        </button>
+        <button
+          (click)="goToPayment()"
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+        >
+          Rent
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

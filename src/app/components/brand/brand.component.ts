@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Brand } from 'src/app/models/brand';
+import { Brand } from 'src/app/models/entities/brand';
 import { BrandService } from 'src/app/services/brand.service';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -13,6 +13,7 @@ export class BrandComponent implements OnInit {
 
   brands:Brand[]=[];
   currentBrand:Brand | null;
+  filterText="";
   constructor(private brandService:BrandService, private colorService:ColorService) { }
 
   ngOnInit(): void {

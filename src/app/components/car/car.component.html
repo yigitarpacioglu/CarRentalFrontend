@@ -8,7 +8,7 @@
             <div class="card-body">
             <h5 class="card-title">{{car.brandName}} {{car.description}}</h5> <hr>
             <li>Color : {{car.colorName}}</li>
-            <li>Daily Price : {{car.dailyPrice}} TL</li>
+            <li>Daily Price : {{car.dailyPrice | currency:"₺"}} </li>
             </div>
         </div>
     </div>

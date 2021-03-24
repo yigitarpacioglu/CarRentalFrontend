@@ -1,0 +1,40 @@
+#paymentOptions:hover{
+    background-color: #ffc107;
+    color: black;
+    border-radius: 5% ;
+}
+#paymentOptions{   
+    background-color: #262626;
+    color: #FFF;
+}
+#paymentOptionsBody{
+    background-color:#E2E3E5;
+    color: black;
+}
+#payButton:hover{
+    background-color: #ffc107;
+    color: black;
+    border-radius: 5% ;
+}
+#balanceUpdate:hover{
+    background-color: #ffc107;
+    color: black;
+    border-radius: 5% ;
+}
+#balanceUpdate{   
+    background-color: #262626;
+    color: #FFF;
+}
+#balanceUpdateBody{
+    background-color:#E2E3E5;
+    color: black;
+}
+#payButton:hover{
+    background-color: #ffc107;
+    color: black;
+    border-radius: 5% ;
+}
+#balanceUpdateButton:hover{
+    background-color: #ffc107;    
+    border-radius: 5% ;
+}

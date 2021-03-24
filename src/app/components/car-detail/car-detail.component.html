@@ -1,52 +1,79 @@
 <div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-9">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">    
-                <div class="carousel-inner">
-                  <div *ngFor="let image of images let i=index" 
-                  [ngClass]="getSliderClassName(i)">
-                   <img src="{{basePath}}/{{image.imagePath}}" class="d-block w-100">
-                  </div>     
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+  <div class="row my-5">
+    <div class="col-md-9">
+      <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div
+            *ngFor="let image of images; let i = index"
+            [ngClass]="getSliderClassName(i)"
+          >
+            <img
+              height="400"
+              src="{{ basePath }}/{{ image.imagePath }}"
+              class="d-block w-100"
+            />
+          </div>
         </div>
-        <div class="col-md-3">            
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                  <h3><b>Details</b></h3>
-                </div>
-                <table class="table"  >
-                    <tbody *ngFor="let car of cars" class="table-secondary align-self-center border border-dark"
-                    scope="row">
-                        <tr>
-                            <th>Brand:</th>
-                            <td>{{car.brandName}}</td>
-                        </tr>
-                        <tr >
-                            <th >Model:</th>
-                            <td>{{car.description}}</td>
-                        </tr>
-                        <tr>
-                            <th >Color:</th>
-                            <td>{{car.colorName}}</td>
-                        </tr>
-                        <tr >
-                            <th >Daily Price:</th>
-                            <td>{{car.dailyPrice}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-        </div>
-               
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#imageCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#imageCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <h3><b>Details</b></h3>
+        </div>
+        <table class="table">
+          <tbody            
+            class="table-secondary align-self-center border border-dark"
+            scope="row"
+          >
+            <tr>
+              <th>Brand:</th>
+              <td>{{ car.brandName }}</td>
+            </tr>
+            <tr>
+              <th>Model:</th>
+              <td>{{ car.description }}</td>
+            </tr>
+            <tr>
+              <th>Color:</th>
+              <td>{{ car.colorName }}</td>
+            </tr>
+            <tr>
+              <th>Daily Price:</th>
+              <td>{{ car.dailyPrice | currency: "₺" }}</td>
+            </tr>
+            
+          </tbody>
+          
+        </table>
+        <button
+          id="rentButton"
+          class="btn btn-dark text-light py-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Rent
+        </button>
+        <app-rental></app-rental>  
+        
+      </div>
+    </div>
+  </div>
 </div>
-

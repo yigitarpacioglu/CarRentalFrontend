@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Car } from 'src/app/models/car';
-import { CarImage } from 'src/app/models/carImage';
+import { Car } from 'src/app/models/entities/car';
+import { CarImage } from 'src/app/models/entities/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
 
@@ -14,7 +14,7 @@ export class CarDetailComponent implements OnInit {
 
   basePath="https://localhost:44327";
   images:CarImage[];
-  cars:Car[];
+  car:Car;
   constructor(private carImageService:CarImageService, private activatedRoute:ActivatedRoute,private carService:CarService) { }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetailsById(carId:number){
     this.carService.getCarDetailsById(carId).subscribe(response=>{
-      this.cars=response.data;
+      this.car=response.data;
     })
   }
   getSliderClassName(index: Number) {
