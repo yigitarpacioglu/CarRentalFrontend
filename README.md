@@ -1,27 +1,7 @@
-# CarRental
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![brands](https://user-images.githubusercontent.com/75935753/112390512-7f99b780-8d07-11eb-91f7-745f52961e6c.gif)
+![colors](https://user-images.githubusercontent.com/75935753/112390531-83c5d500-8d07-11eb-8a32-c33d0b0d2bbd.gif)
+![filter](https://user-images.githubusercontent.com/75935753/112390536-86282f00-8d07-11eb-8d67-344e325f79a5.gif)
+![cardetail](https://user-images.githubusercontent.com/75935753/112390542-888a8900-8d07-11eb-93e3-48fb98404ffa.gif)
+![topayment](https://user-images.githubusercontent.com/75935753/112390550-8a544c80-8d07-11eb-8c1f-28fb0c0467f8.gif)
+![success](https://user-images.githubusercontent.com/75935753/112390556-8c1e1000-8d07-11eb-82d8-4dcfcc473ad3.gif)
