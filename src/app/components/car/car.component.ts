@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Car } from 'src/app/models/entities/car';
+import { CarDto } from 'src/app/models/entities/carDto';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarComponent implements OnInit {
 
-  cars:Car[];
+  cars:CarDto[];
   basePath="https://localhost:44327/"
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
 

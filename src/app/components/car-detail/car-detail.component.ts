@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Car } from 'src/app/models/entities/car';
+import { CarDto } from 'src/app/models/entities/carDto';
 import { CarImage } from 'src/app/models/entities/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
@@ -15,7 +15,7 @@ export class CarDetailComponent implements OnInit {
 
   basePath="https://localhost:44327";
   images:CarImage[];
-  car:Car;
+  car:CarDto;
   constructor(private carImageService:CarImageService, private activatedRoute:ActivatedRoute,private carService:CarService, private toastrService:ToastrService) { }
 
   ngOnInit(): void {

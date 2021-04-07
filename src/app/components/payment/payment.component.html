@@ -14,9 +14,10 @@
                 <th>Brand</th>
                 <th>Model</th>
                 <th>Color</th>
+                <th>Model Year</th>
                 <th>Price(Daily)</th>
-                <th>Price(Total)</th>
-                <th>Your Balance</th>
+                <th>Price(Total)</th>                
+                <th>Your Balance</th>                
               </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 <td>{{ carDetails.brandName }}</td>
                 <td>{{ carDetails.description }}</td>
                 <td>{{ carDetails.colorName }}</td>
+                <td>{{ carDetails.modelYear }}</td>
                 <td>{{ carDetails.dailyPrice | currency: "₺" }}</td>
                 <td>{{ payment.amount | currency: "₺" }}</td>
                 <td>{{ customerToUpdate.balance | currency: "₺" }}</td>

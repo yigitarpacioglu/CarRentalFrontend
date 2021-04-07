@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car } from 'src/app/models/entities/car';
+import { CarDto } from 'src/app/models/entities/carDto';
 import { Customer } from 'src/app/models/entities/customerOps/customer';
 import { Rental } from 'src/app/models/entities/rentOrder/rental';
 import { CarService } from 'src/app/services/car.service';
@@ -14,7 +14,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class RentalComponent implements OnInit {
   customers: Customer[];
   chosenCustomer: Customer;
-  chosenCar: Car;
+  chosenCar: CarDto;
   rentDate: Date;
   returnDate: Date;
   private order:Rental;
