@@ -74,6 +74,7 @@
         <button
         class="btn btn-dark py-3 my-2 button"
         routerLink="/cars/update/{{car.carId}}"
+        (click)=toastrMessage()
         >
         Update
       </button>

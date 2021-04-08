@@ -50,4 +50,7 @@ export class CarDetailComponent implements OnInit {
   rentOnClick(){
     this.toastrService.info("Please select proper customer, pickup and drop off dates.")
   }
+  toastrMessage(){
+    this.toastrService.info("Please fill the spaces without any missing element in the form!")
+  }
 }
