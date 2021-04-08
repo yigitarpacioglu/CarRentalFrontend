@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Brand } from 'src/app/models/entities/brand';
 import { BrandService } from 'src/app/services/brand.service';
 import { ColorService } from 'src/app/services/color.service';
@@ -14,6 +15,8 @@ export class BrandComponent implements OnInit {
   brands:Brand[]=[];
   currentBrand:Brand | null;
   filterText="";
+  private router:Router
+
   constructor(private brandService:BrandService, private colorService:ColorService) { }
 
   ngOnInit(): void {

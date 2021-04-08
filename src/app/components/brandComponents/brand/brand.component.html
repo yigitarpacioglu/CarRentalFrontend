@@ -1,0 +1,56 @@
+<nav id="brandSideBarMenu" class="bg-dark sidebar text-center text-light">
+  <div class="position-sticky pt-0">
+    <h1 routerLink="/cars" (click)="clearCurrentBrand()">BRANDS</h1>
+    <div class="mb-3 px-2">
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Search brands"
+      />
+    </div>
+    <hr />
+    <ul class="nav flex-column">
+      <li
+        *ngFor="let brand of brands | brandFilter: filterText"
+        class="nav-item"
+      >
+        <div class="row mx-3">
+          <div
+            class="col-md-9 mb-1"
+            style="border-radius: 5%"
+            routerLink="/cars/brand/{{ brand.brandId }}"
+          >
+            <span
+              [class]="getCurrentBrandClass(brand)"
+              aria-current="page"
+              href="#"
+              (click)="setCurrentBrand(brand)"
+            >
+              {{ brand.brandName }}
+            </span>
+          </div>
+          <div class="col-md-2">
+            <button
+              class="btn-sm btn-warning text-sm"
+              routerLink="/brands/update/{{ brand.brandId }}"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col-md-12">
+        <button
+          class="btn-sm btn-warning text-sm my-2 mx-1 px-5"
+          routerLink="/brands/add"
+        >
+          Add a New Brand
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

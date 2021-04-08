@@ -1,6 +1,8 @@
-#brandSideBarMenu{
+#colorSideBarMenu{
     font-family:'Verdana';
     cursor: pointer;
+    font-size: small;
+
 }
 
 span{    
@@ -20,4 +22,9 @@ hr{
     margin: 0;
     padding: 0;
     border: 2px solid black;
+}
+button{
+    font-size: 9pt;
+    margin-left: -15px;
+    margin-top: 3px;
 }

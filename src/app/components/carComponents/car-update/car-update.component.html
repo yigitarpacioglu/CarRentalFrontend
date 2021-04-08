@@ -1,0 +1,58 @@
+<div class="content mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white"><h5 class="title">Update Car</h5></div>
+            <div class="card-body">
+                <form [formGroup]="carUpdateForm">
+                    <div class="form-group">
+
+                        <div class="mb-3">
+                            <input type="number" 
+                            id="brandId" 
+                            formControlName="brandId"
+                            class="form-control"
+                            placeholder="{{car.brandId}}"/>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="number" 
+                            id="colorId" 
+                            formControlName="colorId"
+                            class="form-control"
+                            placeholder="{{car.colorId}}"/>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="number" 
+                            id="modelYear" 
+                            formControlName="modelYear"
+                            class="form-control"
+                            placeholder="{{car.modelYear}}"/>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="number" 
+                            id="dailyPrice" 
+                            formControlName="dailyPrice"
+                            class="form-control"
+                            placeholder="{{car.dailyPrice}}"/>  
+                        </div>
+    
+                        <div class="mb-3">
+                            <input type="text" 
+                            id="descriptions" 
+                            formControlName="descriptions"
+                            class="form-control"
+                            placeholder="{{car.descriptions}}"/>   
+                        </div>        
+
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-dark">
+                <button class="btn btn-fill btn-warning" (click)="update()">Update</button>
+                <button class="btn btn-fill btn-secondary mx-3" routerLink="/cars/details/{{car.carId}}">Return</button>
+            </div>
+        </div>
+    </div>
+</div>

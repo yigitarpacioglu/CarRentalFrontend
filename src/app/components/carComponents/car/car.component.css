@@ -17,15 +17,17 @@ li{
 }
 
 img{
- margin-left: 7px; 
- margin-top: 7px;
- height: 120px;
- width: 180px;
+ margin-left: 3px; 
+ margin-top: 3px;
+ height: 85px;
+ width: 150px;
  border-radius: 10%;
  border: 2px solid rgb(99, 98, 98);
 }
 #cbody{
-  padding: 20px 0;  
+  padding: 5px 0;
+  font-size: 8pt;
+  font-weight: bolder;  
 }
 .card:hover{
   cursor: pointer;

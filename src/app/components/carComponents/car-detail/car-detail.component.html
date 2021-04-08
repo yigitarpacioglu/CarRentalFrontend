@@ -44,40 +44,39 @@
             class="table-secondary align-self-center border border-dark"
             scope="row"
           >
-            <tr>
-              <th>Brand:</th>
-              <td>{{ car.brandName }}</td>
+            <tr>              
+              <td> <b>Brand :</b> {{ car.brandName }}</td>
+            </tr>
+            <tr>              
+              <td> <b>Model :</b>  {{ car.description }}</td>
             </tr>
             <tr>
-              <th>Model:</th>
-              <td>{{ car.description }}</td>
+              <td> <b>Color :</b>  {{ car.colorName }}</td>
             </tr>
             <tr>
-              <th>Color:</th>
-              <td>{{ car.colorName }}</td>
+              <td> <b>Model Year :</b>  {{ car.modelYear }}</td>
             </tr>
             <tr>
-              <th>Model Year:</th>
-              <td>{{ car.modelYear }}</td>
-            </tr>
-            <tr>
-              <th>Daily Price:</th>
-              <td>{{ car.dailyPrice | currency: "₺" }}</td>
+              <td> <b>Daily Price :</b>  {{ car.dailyPrice | currency: "₺" }}</td>
             </tr>
             
           </tbody>
           
         </table>
         <button
-          id="rentButton"
-          class="btn btn-dark text-light py-3"
+          class="btn btn-dark py-3 my-2 button"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           (click)=rentOnClick()>
           Rent
         </button>
         <app-rental></app-rental>  
-        
+        <button
+        class="btn btn-dark py-3 my-2 button"
+        routerLink="/cars/update/{{car.carId}}"
+        >
+        Update
+      </button>
       </div>
     </div>
   </div>

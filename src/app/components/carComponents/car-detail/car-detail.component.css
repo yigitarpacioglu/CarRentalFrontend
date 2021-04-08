@@ -1,0 +1,39 @@
+.card{
+    background-image: url("/assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    border: 0px;
+}
+td{
+    padding: 10px;  
+    font-size: 10pt; 
+}
+th{
+    padding: 10px;
+}
+h3{
+    padding: 10px;
+    text-align: center;
+}
+#imageCarousel{    
+    padding: 25px;
+    border: 10px solid #343a40;
+    border-radius: 10%;   
+    background-color:#E2E3E5;
+}
+
+img{
+    border-radius: 10%;
+}
+
+.button{
+    border-radius: 7%;
+    font-size: 13pt;
+    font-weight: bold;
+    color: white;
+}
+.button:hover{
+    background-color:#ffc107 ;  
+    color: black;
+}
