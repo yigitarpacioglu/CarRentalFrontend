@@ -1,4 +1,10 @@
 nav{    
     border:1px solid grey;    
 }
-
+#home{
+    background-image: url('/assets/home.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: green;
+}

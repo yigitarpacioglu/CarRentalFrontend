@@ -27,7 +27,8 @@ import { CarUpdateComponent } from './components/carComponents/car-update/car-up
 import { BrandComponent } from './components/brandComponents/brand/brand.component';
 import { LoginComponent } from './components/userComponents/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/userComponents/register/register.component';
+import { RouterModule } from '@angular/router';
 
 
 
