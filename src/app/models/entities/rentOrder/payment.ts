@@ -1,5 +1,6 @@
+import { CreditCard } from "../creditCard";
+
 export interface Payment{
-    id?:number;
-    customerId:number;
+    creditCard:CreditCard;
     amount:number;
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -14,7 +14,7 @@ import { CarDetailComponent } from './components/carComponents/car-detail/car-de
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { FilterComponent } from './components/filter/filter.component';
-import { RentalComponent } from './components/rental/rental.component';
+import { RentalSummaryComponent } from './components/rentalSummary/rentalSummary.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 import{ToastrModule} from "ngx-toastr";
@@ -25,6 +25,9 @@ import { BrandUpdateComponent } from './components/brandComponents/brand-update/
 import { ColorUpdateComponent } from './components/colorComponents/color-update/color-update.component';
 import { CarUpdateComponent } from './components/carComponents/car-update/car-update.component';
 import { BrandComponent } from './components/brandComponents/brand/brand.component';
+import { LoginComponent } from './components/userComponents/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -40,7 +43,7 @@ import { BrandComponent } from './components/brandComponents/brand/brand.compone
     ColorFilterPipe,
     BrandFilterPipe,
     FilterComponent,
-    RentalComponent,
+    RentalSummaryComponent,
     PaymentComponent,
     BrandAddComponent,
     ColorAddComponent,
@@ -48,6 +51,8 @@ import { BrandComponent } from './components/brandComponents/brand/brand.compone
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
     
   ],
   imports: [
@@ -62,7 +67,11 @@ import { BrandComponent } from './components/brandComponents/brand/brand.compone
     BrowserAnimationsModule,
     
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,20 +17,20 @@
                 <th>Model Year</th>
                 <th>Price(Daily)</th>
                 <th>Price(Total)</th>                
-                <th>Your Balance</th>                
+              
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{{ dateRent | date: "longDate" }}</td>
-                <td>{{ dateReturn | date: "longDate" }}</td>
-                <td>{{ carDetails.brandName }}</td>
-                <td>{{ carDetails.description }}</td>
-                <td>{{ carDetails.colorName }}</td>
-                <td>{{ carDetails.modelYear }}</td>
-                <td>{{ carDetails.dailyPrice | currency: "₺" }}</td>
-                <td>{{ payment.amount | currency: "₺" }}</td>
-                <td>{{ customerToUpdate.balance | currency: "₺" }}</td>
+                <td>{{ summary.rentDate | date: "longDate" }}</td>
+                <td>{{ summary.returnDate | date: "longDate" }}</td>
+                <td>{{ summary.brand }}</td>
+                <td>{{ summary.model }}</td>
+                <td>{{ summary.color }}</td>
+                <td>{{ summary.modelYear }}</td>
+                <td>{{ summary.dailyPrice | currency: "₺" }}</td>
+                <td>{{ summary.totalPrice | currency: "₺" }}</td>
+                
               </tr>
             </tbody>
           </table>
@@ -115,7 +115,7 @@
                     <div class="card-footer">
                       <div class="row">
                         <button
-                          (click)="pay()"
+                          
                           id="payButton"
                           class="btn btn-dark text-light"
                         >
@@ -211,7 +211,6 @@
                             type="text"                          
                             class="form-control"
                             required="required"
-                            [(ngModel)]="cashAmount"
                           />
                         </div>
                       </div>
@@ -220,8 +219,7 @@
                       <div class="row">
                         <button
                           
-                          (click)="balanceUpdate()"
-                          id="balanceUpdateButton"
+                         id="balanceUpdateButton"
                           class="btn btn-dark text-light"
                           
                         >

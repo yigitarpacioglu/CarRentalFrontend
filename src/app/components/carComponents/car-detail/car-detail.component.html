@@ -40,44 +40,42 @@
           <h3><b>Details</b></h3>
         </div>
         <table class="table">
-          <tbody            
+          <tbody
             class="table-secondary align-self-center border border-dark"
             scope="row"
           >
-            <tr>              
-              <td> <b>Brand :</b> {{ car.brandName }}</td>
-            </tr>
-            <tr>              
-              <td> <b>Model :</b>  {{ car.description }}</td>
+            <tr>
+              <td><b>Brand :</b> {{ car.brandName }}</td>
             </tr>
             <tr>
-              <td> <b>Color :</b>  {{ car.colorName }}</td>
+              <td><b>Model :</b> {{ car.description }}</td>
             </tr>
             <tr>
-              <td> <b>Model Year :</b>  {{ car.modelYear }}</td>
+              <td><b>Color :</b> {{ car.colorName }}</td>
             </tr>
             <tr>
-              <td> <b>Daily Price :</b>  {{ car.dailyPrice | currency: "₺" }}</td>
+              <td><b>Model Year :</b> {{ car.modelYear }}</td>
             </tr>
-            
+            <tr>
+              <td><b>Daily Price :</b> {{ car.dailyPrice | currency: "₺" }}</td>
+            </tr>
           </tbody>
-          
         </table>
         <button
           class="btn btn-dark py-3 my-2 button"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          (click)=rentOnClick()>
+        >
           Rent
         </button>
-        <app-rental></app-rental>  
+        <app-rentalSummary></app-rentalSummary>
         <button
-        class="btn btn-dark py-3 my-2 button"
-        routerLink="/cars/update/{{car.carId}}"
-        (click)=toastrMessage()
+          class="btn btn-dark py-3 my-2 button"
+          routerLink="/cars/update/{{ car.carId }}"
+          (click)="toastrMessage()"
         >
-        Update
-      </button>
+          Update
+        </button>
       </div>
     </div>
   </div>

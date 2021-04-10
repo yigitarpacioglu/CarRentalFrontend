@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarDto } from 'src/app/models/entities/carDto';
 import { Customer } from 'src/app/models/entities/customerOps/customer';
+import { RentalSummary } from 'src/app/models/entities/rentalSummary';
 import { Payment } from 'src/app/models/entities/rentOrder/payment';
 import { Rental } from 'src/app/models/entities/rentOrder/rental';
 import { CarService } from 'src/app/services/car.service';
@@ -16,9 +17,17 @@ import { RentService } from 'src/app/services/rent.service';
 })
 export class PaymentComponent implements OnInit {
 
-  rental:Rental;
+  summary:RentalSummary;
   carDetails:CarDto;
-  payment:Payment={customerId:0,amount:0 };
+  payment:Payment={creditCard:{   
+    userId:2,
+    cardNumber:"",
+    firstName:"",
+    lastName:"",
+    expirationDate:"",
+    cvc:"",
+    balance:0},amount:0 };
+
   dateRent:Date;
   dateReturn:Date;
   customerToUpdate:Customer;
@@ -26,69 +35,16 @@ export class PaymentComponent implements OnInit {
   
 
   constructor(private activatedRoute:ActivatedRoute,
-    private carService:CarService,
     private router:Router,
     private rentService:RentService,
-    private customerService:CustomerService,
     private toastrService:ToastrService,
     ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      if(params["rental"]){
-        this.rental = JSON.parse(params['rental']);
-        this.getCarDetail();
-        this.getCustomer();
+      if(params["rentalSummary"]){
+        this.summary = JSON.parse(params['rentalSummary']);
       }
     })
-  }
-
-  getCarDetail(){
-    this.carService.getCarDetailsById(this.rental.carId).subscribe((response)=>{
-      this.carDetails=response.data;
-      this.calculateTotalAmount();
-    })
-  }
-  
-  getCustomer(){
-    this.customerService.getCustomerById(this.rental.customerId).subscribe((response)=>{
-      this.customerToUpdate=response.data;
-    })
-  } 
-
-  balanceUpdate(){
-    console.log(this.cashAmount)
-    this.customerService.updateBalance(this.customerToUpdate,this.cashAmount).subscribe(response=>{this.router.navigate([this.activatedRoute])})
-  }
-
-  calculateTotalAmount(){
-    if(this.rental.returnDate != null ){
-      this.dateRent = new Date(this.rental.rentDate.toString());
-      this.dateReturn = new Date(this.rental.returnDate.toString());
-      var difference = this.dateReturn.getTime() - this.dateRent.getTime();    
-    var numberOfDays = Math.ceil(difference / (1000 * 3600 * 24)); 
-    
-    this.payment.amount = numberOfDays * this.carDetails.dailyPrice;
-    this.payment.customerId=this.rental.customerId;    
-    if(this.payment.amount <= 0){
-      this.router.navigate(['/cars']);
-      this.toastrService.error("Please fill with correct values")
-    }
-    }
   }  
-  pay(){  
-    //console.log(this.rental)  
-    //console.log(this.payment)  
-    this.rentService.pay(this.rental,this.payment).subscribe(response => {
-      if(response.success){
-        this.router.navigate(['/cars']); 
-        this.toastrService.success(response.message);
-      }    
-    })     
-  }
-  
-
-  
-   
 }
-
