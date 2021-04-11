@@ -6,3 +6,14 @@
     border: 5px solid white;
     font-weight: bolder;
 }
+.customRow{
+    border-top: 1px solid rgb(119, 114, 114);
+    font-size: 11pt;
+    padding-top:1em
+}
+.specialnote{
+font-size:9pt; 
+text-align:left;
+margin-right: 1em;
+font-weight: bolder;
+}

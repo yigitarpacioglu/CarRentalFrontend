@@ -9,7 +9,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header bg-dark text-light">
-        <h5 class="modal-title" id="exampleModalLabel">Date Selection</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Rental Details</h5>
         <button
           type="button"
           class="close btn-danger"
@@ -20,7 +20,8 @@
         </button>
       </div>
       <div class="modal-body bg-light">
-        <div class="row mb-5">
+        <h1 style="font-size: 2em">Date Selection</h1>
+        <div class="row mb-5 customRow">
           <div class="col">
             <label for="rent">Rent Date</label>
             <input
@@ -28,7 +29,7 @@
               type="date"
               class="form-control"
               [(ngModel)]="rentDate"
-              [min]="initialDate(1)"              
+              [min]="initialDate(1)"
             />
           </div>
           <div class="col">
@@ -40,12 +41,12 @@
               [(ngModel)]="returnDate"
               [min]="initialDate(2)"
               (ngModelChange)="calculateTotalAmount()"
-              
             />
           </div>
         </div>
-        <h1  style="font-size: 2em">Rental Summary</h1>
-        <div class="row ">
+
+        <h1 style="font-size: 2em">Rental Summary</h1>
+        <div class="row customRow">
           <div class="col-6">
             <label for="brand" class="col-form-label"> Brand: </label>
             <div>
@@ -122,18 +123,32 @@
                 id="totalAmount"
                 type="text"
                 readonly
-                class="form-control"                
-                [value]="amount | currency: '₺' "
+                class="form-control"
+                [value]="amount | currency: '₺'"
               />
             </div>
           </div>
         </div>
-
-
       </div>
 
       <div class="modal-footer bg-dark">
-        <button type="button" class="btn btn-secondary text-light" data-bs-dismiss="modal">
+        <span class="text-danger specialnote">
+          Warning:Please fill the customer form if it's your first experience
+          with us!
+        </span>
+        <button
+          type="button"
+          class="btn btn-danger text-light"
+          routerLink="/customerForm/{{ chosenCar.carId }}"
+          data-bs-dismiss="modal"
+        >
+          Customer Form
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary text-light"
+          data-bs-dismiss="modal"
+        >
           Return
         </button>
         <button

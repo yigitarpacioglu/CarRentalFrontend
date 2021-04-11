@@ -1,41 +1,34 @@
-<section class="ftco-section">
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-6 col-lg-5">
-        <div class="card bg-dark m-n1 form-control h-100">
-          <div class="login-wrap p-3">
-            <h3 class="mb-4 text-center">Have an account?</h3>
-            <form [formGroup]="signInForm" class="signin-form">
-              <div class="form-group">
-                <input
-                  type="email"
-                  formControlName="email"
-                  class="form-control"
-                  placeholder="E-mail"
-                  required
-                />
-              </div>
-              <div class="form-group mb-5">
-                <input
-                  formControlName="password"
-                  id="password"
-                  type="password"
-                  class="form-control"
-                  placeholder="Password"
-                  required
-                />
-                <span toggle="#password-field"></span>
-              </div>
-              <div class="form-group">
-                <button class="w-100 btn btn-warning px-3" (click)="signIn()" >Sign In</button>
-              </div>
-            </form>
-            <p class="w-100 text-center btn btn-danger">
-              &mdash; Or Sign Up &mdash;
-            </p>
+<div class="container py-5">
+  <div class="row justify-content-center py-5">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header h4 mb-4 border-danger text-center text-danger">Have an account?</div>
+        <form [formGroup]="signInForm" >
+          <div class="my-3">
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              placeholder="E-mail"
+              required
+            />
           </div>
-        </div>
+          <div class="form-group mb-5">
+            <input
+              formControlName="password"
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+            <span toggle="#password-field"></span>
+          </div>
+          <div class="form-group">
+            <button id="login" class="w-100 btn btn-warning px-3" (click)="signIn()" >Sign In</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</section>
+</div>

@@ -5,5 +5,6 @@ export interface CarDto{
     colorName:string;
     dailyPrice:number;
     modelYear:number;
+    findex:number
     imagePath:string;    
 }

@@ -13,10 +13,11 @@ export class RentService {
   apiUrl='https://localhost:44327/api/'
   constructor(private httpClient:HttpClient) { }
 
-  pay(rental:Rental,payment:Payment):Observable<ResponseModel>{
-    let path = this.apiUrl+"rentals/payment"
-    rental.returnDate=undefined;    
-    return this.httpClient.post<ResponseModel>(path,{rental:rental,payment:payment});
+  pay(rental:Rental,payment:Payment):Observable<ResponseModel>{   
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"rentals/payment",{
+      rental:rental,
+      payment:payment
+    });
   }
   
 }

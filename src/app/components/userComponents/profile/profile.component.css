@@ -4,8 +4,9 @@
     padding: 25px;
     background-color: #343A40;
     border:2px solid #DC3545;
+    margin-top: 50%;
 }
-#register:hover{
+#update:hover{
     background-color: red;
     border: 5px solid white;
     font-weight: bolder;

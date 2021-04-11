@@ -5,6 +5,4 @@ export interface RentalSummary{
     modelYear:number;
     dailyPrice:number;
     totalPrice:number;
-    rentDate:Date;
-    returnDate:Date;
 }

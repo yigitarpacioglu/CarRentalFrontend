@@ -8,4 +8,5 @@ export interface User{
     passwordHash: Byte[];
     passwordSalt: Byte[];
     status: boolean;
+    findex:number;
 }

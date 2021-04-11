@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
-  }
+  }  
 
   signIn() {
     if (this.signInForm.valid) {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['']);
           this.toastrService.success(response.message, 'Succesful Login');
           this.localStorageService.set('token', response.data.token);
-          this.localStorageService.set('email', this.signInForm.value.email)
+          this.localStorageService.set('email', this.signInForm.value.email)          
         },
         (responseError) => {
           this.toastrService.error(responseError.error, 'Wrong Credentials');

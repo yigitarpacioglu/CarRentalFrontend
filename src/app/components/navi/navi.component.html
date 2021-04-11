@@ -14,7 +14,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" routerLink="/">
-          <a class="nav-link active" style="cursor: pointer; font-weight: bolder;">Home</a>
+          <a
+            class="nav-link active"
+            style="cursor: pointer; font-weight: bolder"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link active" routerLink="/brands">Brands</a>
@@ -26,13 +30,16 @@
           <a class="nav-link active" style="cursor: pointer">Add a New Car</a>
         </li>
       </ul>
-      <div *ngIf="isSignedIn()==false">
-        <button class="btn btn-outline-warning" routerLink="login" >Sign In</button>
-        <button class="btn btn-outline-danger mx-2"
-        routerLink="register" >Sign Up</button>
+      <div *ngIf="isSignedIn() == false">
+        <button class="btn btn-outline-warning" routerLink="login">
+          Sign In
+        </button>
+        <button class="btn btn-outline-danger mx-2" routerLink="register">
+          Sign Up
+        </button>
       </div>
 
-      <ul class="nav navbar-nav ml-auto" *ngIf="isSignedIn()==true">
+      <ul class="nav navbar-nav ml-auto" *ngIf="isSignedIn() == true">
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -41,17 +48,22 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {{this.user.firstName}} {{this.user.lastName}}
+            {{ this.user.firstName }} {{ this.user.lastName }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Profile Settings</a></li>
-            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                style="cursor: pointer"
+                routerLink="/profile/{{this.user.id}}"
+                >Profile Settings</a
+              >
+            </li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-

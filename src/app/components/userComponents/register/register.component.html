@@ -1,57 +1,54 @@
-<section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mt-5">
-        <div class="col-md-6 col-lg-5">
-          <div class="card bg-dark m-n1 form-control h-100">
-            <div class="login-wrap p-3">
-              <h3 class="mb-5 text-center">Sign Up</h3>
-              <form [formGroup]="signUpForm"  class="signup-form">
-                <div class="form-group">
-                    <input
-                    formControlName="firstName"
-                      type="text"
-                      class="form-control"
-                      placeholder="First Name"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                    formControlName="lastName"
-                      type="text"
-                      class="form-control"
-                      placeholder="Last Name"
-                      required
-                    />
-                  </div>
-                <div class="form-group">
-                  <input
-                    formControlName="email"
-                    type="email"
-                    class="form-control"
-                    placeholder="E-mail"
-                    required
-                  />
-                </div>
-                <div class="form-group mb-5">
-                  <input     
-                    formControlName="password"              
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    required
-                  />
-                  <span toggle="#password-field"></span>
-                </div>
-                
-                <div class="form-group">
-                  <button class="w-100 btn btn-warning px-3" (click)="signUp()" >Sign UP</button>
-                </div>
-              </form>
+<div class="container py-5">
+  <div class="row justify-content-center py-5">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header h4 mb-4 border-danger text-center text-danger">
+          Sign Up
+        </div>      
+        <form [formGroup]="signUpForm"  class="signup-form">
+          <div class="my-3">
+              <input
+              formControlName="firstName"
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                required
+              />
             </div>
+            <div class="my-3">
+              <input
+              formControlName="lastName"
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          <div class="my-3">
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="E-mail"
+              required
+            />
           </div>
-        </div>
+          <div class="my-3 mb-5">
+            <input     
+              formControlName="password"              
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+            <span toggle="#password-field"></span>
+          </div>
+          
+          <div class="form-group">
+            <button id="register" class="w-100 btn btn-warning px-3" (click)="signUp()" >Sign UP</button>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-  
+  </div>
+</div>

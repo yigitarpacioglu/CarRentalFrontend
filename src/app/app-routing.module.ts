@@ -11,6 +11,9 @@ import { ColorUpdateComponent } from './components/colorComponents/color-update/
 import { PaymentComponent } from './components/payment/payment.component';
 import { RegisterComponent } from './components/userComponents/register/register.component';
 import { LoginComponent } from './components/userComponents/login/login.component';
+import { ProfileComponent } from './components/userComponents/profile/profile.component';
+import { CustomerFormComponent } from './components/userComponents/customer-form/customer-form.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
@@ -19,15 +22,17 @@ const routes: Routes = [
   {path:"cars/color/:colorId", component:CarComponent},
   {path:"cars/filter/:brandId/:colorId",component:CarComponent},
   {path:"cars/details/:carId",component:CarDetailComponent},
-  {path:"payment/:rentalSummary",component:PaymentComponent},
-  {path:"brands/add",component:BrandAddComponent},
-  {path:"colors/add",component:ColorAddComponent},
-  {path:"cars/add",component:CarAddComponent},
-  {path:"brands/update/:brandId",component:BrandUpdateComponent},
-  {path:"colors/update/:colorId",component:ColorUpdateComponent},
-  {path:"cars/update/:carId",component:CarUpdateComponent},
+  {path:"payment/:rental",component:PaymentComponent, canActivate:[LoginGuard]},
+  {path:"brands/add",component:BrandAddComponent,canActivate:[LoginGuard]},
+  {path:"colors/add",component:ColorAddComponent,canActivate:[LoginGuard]},
+  {path:"cars/add",component:CarAddComponent,canActivate:[LoginGuard]},
+  {path:"brands/update/:brandId",component:BrandUpdateComponent,canActivate:[LoginGuard]},
+  {path:"colors/update/:colorId",component:ColorUpdateComponent,canActivate:[LoginGuard]},
+  {path:"cars/update/:carId",component:CarUpdateComponent,canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
+  {path:"profile/:userId",component:ProfileComponent,canActivate:[LoginGuard]},
+  {path:"customerForm/:carId",component:CustomerFormComponent,canActivate:[LoginGuard]},
 ];
 
 @NgModule({

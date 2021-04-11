@@ -35,7 +35,7 @@ export class NaviComponent implements OnInit {
   getByEmail(){    
     this.userService.getUserByEmail(this.email).subscribe(response=>{
       this.user=response.data 
-      this.localStorageService.set('user',this.user) 
+      this.localStorageService.set('userId',this.user.id) 
     });
   }
   logout(){

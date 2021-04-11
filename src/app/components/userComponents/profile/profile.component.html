@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header h3 mb-4 border-danger text-center text-danger">
+                    Account Settings
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="updateForm">
+                        <div class="form-group">
+                          <div class="mb-3">
+                            <input
+                              type="text"
+                              id="firstName"
+                              formControlName="firstName"
+                              class="form-control"
+                              placeholder="First Name"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <input
+                              type="text"
+                              id="lastName"
+                              formControlName="lastName"
+                              class="form-control"
+                              placeholder="Last Name"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <input
+                              type="text"
+                              id="email"
+                              formControlName="email"
+                              class="form-control"
+                              placeholder="Email"
+                            />
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                <div class="card-footer d-flex flex-row-reverse">
+                    <button id="update" class="btn btn-warning" (click)="update()" >
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

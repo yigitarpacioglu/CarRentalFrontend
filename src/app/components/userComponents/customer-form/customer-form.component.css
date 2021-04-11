@@ -1,3 +1,7 @@
+.customRow{
+    font-size: 11pt;
+    padding-top:1em
+}
 .card{
     border-radius: 35px;
     margin:auto 0;
@@ -5,8 +9,7 @@
     background-color: #343A40;
     border:2px solid #DC3545;
 }
-#register:hover{
-    background-color: red;
-    border: 5px solid white;
-    font-weight: bolder;
+hr{
+    border: 5px solid #DC3545;
+    border-radius: 10%;
 }

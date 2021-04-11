@@ -15,7 +15,7 @@ import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { FilterComponent } from './components/filter/filter.component';
 import { RentalSummaryComponent } from './components/rentalSummary/rentalSummary.component';
-import { PaymentComponent } from './components/payment/payment.component';
+
 
 import{ToastrModule} from "ngx-toastr";
 import { BrandAddComponent } from './components/brandComponents/brand-add/brand-add.component';
@@ -29,6 +29,9 @@ import { LoginComponent } from './components/userComponents/login/login.componen
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/userComponents/register/register.component';
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './components/userComponents/profile/profile.component';
+import { CustomerFormComponent } from './components/userComponents/customer-form/customer-form.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 
@@ -45,7 +48,6 @@ import { RouterModule } from '@angular/router';
     BrandFilterPipe,
     FilterComponent,
     RentalSummaryComponent,
-    PaymentComponent,
     BrandAddComponent,
     ColorAddComponent,
     CarAddComponent,
@@ -54,6 +56,9 @@ import { RouterModule } from '@angular/router';
     CarUpdateComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
+    CustomerFormComponent,
+    PaymentComponent,
     
   ],
   imports: [

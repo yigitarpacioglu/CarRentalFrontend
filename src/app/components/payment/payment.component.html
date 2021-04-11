@@ -16,21 +16,19 @@
                 <th>Color</th>
                 <th>Model Year</th>
                 <th>Price(Daily)</th>
-                <th>Price(Total)</th>                
-              
+                <th>Price(Total)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{{ summary.rentDate | date: "longDate" }}</td>
-                <td>{{ summary.returnDate | date: "longDate" }}</td>
-                <td>{{ summary.brand }}</td>
-                <td>{{ summary.model }}</td>
-                <td>{{ summary.color }}</td>
-                <td>{{ summary.modelYear }}</td>
-                <td>{{ summary.dailyPrice | currency: "₺" }}</td>
-                <td>{{ summary.totalPrice | currency: "₺" }}</td>
-                
+                <td>{{ rental.rentDate | date: "longDate" }}</td>
+                <td>{{ rental.returnDate | date: "longDate" }}</td>
+                <td>{{ chosenCar.brandName }}</td>
+                <td>{{ chosenCar.description }}</td>
+                <td>{{ chosenCar.colorName }}</td>
+                <td>{{ chosenCar.modelYear }}</td>
+                <td>{{ chosenCar.dailyPrice | currency: "₺" }}</td>
+                <td> {{amount | currency: "₺" }}</td>
               </tr>
             </tbody>
           </table>
@@ -60,77 +58,97 @@
               >
                 <div class="accordion-body">
                   <div class="card mt-4">
-                    <div class="card-header text-center">
-                      <strong>Payment Card Information</strong>
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="inputbox mt-3">
-                          <span>Card's holder</span>
-                          <input
-                            type="text"
-                            name="name"
-                            class="form-control"
-                            required="required"
-                          />
+                    <form [formGroup]="paymentForm">
+                      <div class="form-group">
+                        <div class="card-header text-center">
+                          <strong>Debit Card Information</strong>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="inputbox mt-3 mr-2">
-                              <span>Card Number</span>
+                        <div class="card-body">
+                          <div class="row">
+                            <h5 class="h5">Card Holder</h5>
+                            <hr />
+                            <div class="col-6 inputbox">
+                              <span>First Name</span>
                               <input
+                                formControlName="firstName"
                                 type="text"
-                                name="name"
                                 class="form-control"
                                 required="required"
                               />
-                              <i class="fa fa-credit-card"></i>
                             </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="d-flex flex-row">
-                              <div class="inputbox mt-3 mx-4">
-                                <span>Expire date</span>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  class="form-control"
-                                  required="required"
-                                />
+                            <div class="col-6 inputbox">
+                              <span>Last Name</span>
+                              <input
+                                formControlName="lastName"
+                                type="text"
+                                class="form-control"
+                                required="required"
+                              />
+                            </div>
+
+                            <div class="row">
+                              <h5 class="h5 mt-3">Card Information</h5>
+                              <hr />
+                              <div class="col-md-6">
+                                <div class="inputbox mr-2">
+                                  <span>Card Number</span>
+                                  <input
+                                    type="text"
+                                    formControlName="cardNumber"
+                                    class="form-control"
+                                    required="required"
+                                  />
+                                  <i class="fa fa-credit-card"></i>
+                                </div>
                               </div>
-                              <div class="inputbox mt-3">
-                                <span>CVC / Sec. Code</span>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  class="form-control"
-                                  required="required"
-                                />
+                              <div class="col-md-6">
+                                <div class="d-flex flex-row">
+                                  <div class="inputbox mx-3">
+                                    <span>Expire date</span>
+                                    <input
+                                      type="text"
+                                      formControlName="expirationDate"
+                                      class="form-control"
+                                      required="required"
+                                    />
+                                  </div>
+                                  <div class="inputbox">
+                                    <span>CVC / Sec. Code</span>
+                                    <input
+                                      type="text"
+                                      formControlName="cvc"
+                                      class="form-control"
+                                      required="required"
+                                    />
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <div class="card-footer">
+                          <div class="row">
+                            <button
+                              (click)="payRental()"
+                              id="payButton"
+                              class="btn btn-dark text-light"
+                            >
+                              <strong
+                                >{{amount | currency: "₺" }}
+                               </strong
+                              >Pay
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="card-footer">
-                      <div class="row">
-                        <button
-                          
-                          id="payButton"
-                          class="btn btn-dark text-light"
-                        >
-                          <strong>{{ payment.amount | currency: "₺" }} </strong
-                          >Rent
-                        </button>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="card-footer text-muted bg-dark">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
@@ -208,7 +226,7 @@
                         <div class="inputbox mt-3">
                           <span>Cash amount you would like to load</span>
                           <input
-                            type="text"                          
+                            type="text"
                             class="form-control"
                             required="required"
                           />
@@ -218,15 +236,11 @@
                     <div class="card-footer">
                       <div class="row">
                         <button
-                          
-                         id="balanceUpdateButton"
+                          id="balanceUpdateButton"
                           class="btn btn-dark text-light"
-                          
                         >
-                          <strong>{{ cashAmount | currency: "₺" }} </strong
-                          >Deposit
+                          <strong> </strong>Deposit
                         </button>
-                        
                       </div>
                     </div>
                   </div>
