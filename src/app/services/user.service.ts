@@ -26,7 +26,7 @@ export class UserService {
     return this.httpClient.post<ResponseModel>(newPath,user);
   }
   findexOps(userId:number, carId:number):Observable<ResponseModel>{
-    let newPath = this.apiUrl + `findexadd?userId=${userId}&colorid=${carId}`
+    let newPath = this.apiUrl + `findexadd`
     return this.httpClient.post<ResponseModel>(newPath,{userId,carId})
   }
 }

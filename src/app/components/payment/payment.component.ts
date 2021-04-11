@@ -8,6 +8,7 @@ import { Rental } from 'src/app/models/entities/rentOrder/rental';
 import { CarService } from 'src/app/services/car.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { RentService } from 'src/app/services/rent.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-payment',
@@ -38,7 +39,8 @@ export class PaymentComponent implements OnInit {
     private router:Router,
     private rentService:RentService,
     private toastrService:ToastrService,
-    private localStorageService:LocalStorageService
+    private localStorageService:LocalStorageService,
+    private userService:UserService
     ) { }
 
   ngOnInit(): void {
@@ -73,6 +75,10 @@ export class PaymentComponent implements OnInit {
       },amount:this.amount})      
       this.rentService.pay(this.rental,this.payment).subscribe( response=>{
         this.toastrService.success(response.message,"Success")
+        this.addFindexPoint();
+        this.router.navigate(['/cars']);
+      },responseError=>{
+        this.toastrService.error(responseError.error.message,"Payment Error")
       })    
     }
   }
@@ -93,5 +99,15 @@ export class PaymentComponent implements OnInit {
 
     }
   } 
+  addFindexPoint() {
+    this.userService.findexOps(this.userId,this.rental.carId)
+      .subscribe(response => {
+          this.toastrService.success(response.message);
+        },
+        (responseError) => {
+          this.toastrService.info(responseError.error.message);
+        }
+      );
+  }
 
 }
