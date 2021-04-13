@@ -8,8 +8,8 @@
 This repo contains front-end part of Car Rental Project. You can access Back-end part via <a href="https://github.com/yigitarpacioglu/CarRentalBackend">Back-end Link</a> 
 
 ### Technologies
-:point_right: ANGULAR
-:point_right: TypeScript
-:point_right: HTML
-:point_right: CSS
+:point_right: ANGULAR <br>
+:point_right: TypeScript <br>
+:point_right: HTML <br>
+:point_right: CSS <br>
 
