@@ -2,3 +2,6 @@
 ![reposize](https://img.shields.io/github/repo-size/yigitarpacioglu/CarRentalFrontend?color=success)
 
 <h1 align="center"> Car Rental Project - Frontend </h1> 
+
+## :collision: Abstract
+This repo contains front-end part of Car Rental Project. You can access Back-end part via <a href="https://github.com/yigitarpacioglu/CarRentalBackend"
