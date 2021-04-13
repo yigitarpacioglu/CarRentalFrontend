@@ -28,7 +28,7 @@ This repo contains front-end part of Car Rental Project. You can access Back-end
 You can have a look short tutorials of project below.
 
 ### Home Part
-![home](https://user-images.githubusercontent.com/43720773/114236068-be777080-9989-11eb-86a7-dab0603d7562.gif)
+![home](![home](https://user-images.githubusercontent.com/75935753/114576450-d437af00-9c83-11eb-896b-78e9667838b2.gif)
 <br>
 ## Login Part
 ![login](https://user-images.githubusercontent.com/75935753/114576455-d568dc00-9c83-11eb-8eed-f98c078ca491.gif)
