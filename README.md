@@ -14,15 +14,15 @@ This repo contains front-end part of Car Rental Project. You can access Back-end
 :point_right: CSS <br>
 
 ## :collision: Content List 
-:pushpin: [Home](#home)
-:pushpin: [Login](#login)
-:pushpin: [Register](#register)
-:pushpin: [Add Car](#add-car)
-:pushpin: [Update Car](#update-car)
-:pushpin: [Rent Car](#rent-car)
-:pushpin: [Brand](#brand)
-:pushpin: [Color](#color)
-:pushpin: [Profile_Update](#profile-update)
+:pushpin: [Home](#home) <br>
+:pushpin: [Login](#login) <br>
+:pushpin: [Register](#register) <br>
+:pushpin: [Add Car](#add-car) <br>
+:pushpin: [Update Car](#update-car) <br>
+:pushpin: [Rent Car](#rent-car) <br>
+:pushpin: [Brand](#brand) <br>
+:pushpin: [Color](#color) <br>
+:pushpin: [Profile_Update](#profile-update) <br>
 
 ## 💥 How it works?
 You can have a look short tutorials of project below.
@@ -38,4 +38,19 @@ You can have a look short tutorials of project below.
 <br>
 ## Adding new car to system
 ![add-car](https://user-images.githubusercontent.com/75935753/114576499-e0237100-9c83-11eb-8fb5-cd20a6a5df01.gif)
+<br>
+## Updating car that exists in the system
+![update-car](https://user-images.githubusercontent.com/75935753/114576508-e1549e00-9c83-11eb-8285-33572bcb001f.gif)
+<br>
+## Rent Process
+![rent](https://user-images.githubusercontent.com/75935753/114576479-db5ebd00-9c83-11eb-86eb-1317aa380ea9.gif)
+<br>
+## Brand Operations (add-update)
+![brand](https://user-images.githubusercontent.com/75935753/114576482-dc8fea00-9c83-11eb-9cf8-8627264da9ae.gif)
+<br>
+## Color Operations (add-update)
+![color](https://user-images.githubusercontent.com/75935753/114576490-de59ad80-9c83-11eb-99ec-1a26c8aa708e.gif)
+<br>
+## Profile Settings
+![profile-update](https://user-images.githubusercontent.com/75935753/114576516-e285cb00-9c83-11eb-9a4d-5c93cb28c7c6.gif)
 <br>
